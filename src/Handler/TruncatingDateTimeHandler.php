@@ -101,6 +101,9 @@ class TruncatingDateTimeHandler implements SubscribingHandlerInterface
         if (str_contains($data, 'UTC')) {
             $microseconds = strstr($microseconds, 'UTC', true);
         }
+        if (str_contains($data, 'EEST')) {
+            $microseconds = strstr($microseconds, 'EEST', true);
+        }
         $truncated = substr($microseconds, 0, 7);
         $data = str_replace($microseconds, $truncated, $data);
 

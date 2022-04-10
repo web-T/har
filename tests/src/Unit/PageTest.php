@@ -40,6 +40,7 @@ class PageTest extends HarTestBase
         );
 
         $deserialized = $serializer->deserialize($serialized, Page::class, 'json');
+        
         $this->assertEquals($page, $deserialized);
     }
 }
